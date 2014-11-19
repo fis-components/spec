@@ -16,13 +16,13 @@ FIS Components 规范说明
   ],
   "roadmap":[
     {
-      "reg": "**.css",
-      "release": "styles/$&"
+      "reg":"**.css",
+      "release":"styles/$&"
     },
     
     {
-      "reg": "*",
-      "release": false
+      "reg":"*",
+      "release":false
     }
   ]
 }
