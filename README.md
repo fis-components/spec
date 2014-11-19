@@ -88,3 +88,31 @@ FIS 模块规范说明
 
 * 平台可以是 `github`、`gitlab` 或者 `bitbucket`。
 * 版本支持 [semver](https://github.com/npm/node-semver) 格式。
+
+### roadmap
+
+如果仓库中文件存放比较多或默认存放规则与最终引用路径不一致，可以通过指定此属性来设定。
+
+```json
+{
+  ...
+
+  "roadmap": [
+    {
+      "reg": "/^dist\/(.*)$/",
+      "release": "$1"
+    },
+
+    {
+      "reg": "glob patterns",
+      "release": false
+    }
+
+  ]
+
+  ...
+}
+```
+
+* `reg` 用来匹配源仓库文件，支持正则与 [glob](https://github.com/isaacs/node-glob) 两种规则。
+* `release` 用来指定安装后的存放路径。
