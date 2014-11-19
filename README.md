@@ -1,7 +1,7 @@
 FIS Components 规范说明
 ====
 
-此规范大部分借鉴了[component](https://github.com/componentjs/component)的思想。
+此规范借鉴了很多[component](https://github.com/componentjs/component)的思想。
 
 每个组件必须包含一个 `component.json` 文件来描述此组件信息。
 
