@@ -7,6 +7,8 @@ FIS 模块规范说明
 
 模块应该是一个比较独立的整体，模块内部资源引用，应该使用相对路径来引用。模块中的 JS 应该采用 COMMONJS 规范或者 [AMD](https://github.com/amdjs/amdjs-api) 规范来解决依赖和对外暴露的问题。模块对于其依赖中 `main` JS 的引用应该通过模块名来引用，如 `require('jquery')`，`main` js 之外的 js 通过 `name/path` 的方式引用如 `require('jquery-ui/autocomplete')`。
 
+模块被安装后，应当使其目录尽可能少的包含无用文件，如： test 用例，编辑器配置文件，覆盖率报表啊之类的，都应该不被安装，规则可以通过 [roadmap](#roadmap) 设置。
+
 ## component.json
 每个组件必须包含一个 `component.json` 文件来描述此组件信息。
 
