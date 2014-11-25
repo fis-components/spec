@@ -21,17 +21,7 @@ FIS 模块规范说明
     "gitlab://fis-dev/fis-report-record@master",
     "lights://pc-demo@latest"
   ],
-  "roadmap":[
-    {
-      "reg": "**.css",
-      "release": "styles/$&"
-    },
-
-    {
-      "reg": "*",
-      "release": false
-    }
-  ]
+  "roadmap": "./components.roadmap.js"
 }
 ```
 ### name
@@ -95,29 +85,19 @@ FIS 模块规范说明
 
 如果仓库中文件存放比较多或希望最终安装后路径与原存放路径不一致，可以通过指定此属性来设定。
 
+由于 roadmap 的规则比较负责，不适合用 json 文件来描述，所以需要借助一个 js 文件来配置。
+
 ```json
 {
   ...
 
-  "roadmap": [
-    {
-      "reg": "/^dist\/(.*)$/",
-      "release": "$1"
-    },
-
-    {
-      "reg": "glob patterns",
-      "release": false
-    }
-
-  ]
+  "roadmap": : "./components.roadmap.js"
 
   ...
 }
 ```
 
-* `reg` 用来匹配仓库原文件路径，支持正则与 [glob](https://github.com/isaacs/node-glob) 两种规则。
-* `release` 用来指定安装后的存放路径，当 `reg` 为正则表达式时，可以通过 `$数字` 来代替分组捕获。
+如果不填写此属性，项目中所有的文件都会被安装。
 
 ### shim
 
@@ -131,5 +111,28 @@ FIS 模块规范说明
       "exports": "window.dialog"
     }
   }
+}
+```
+
+
+## components.roadmap.js
+
+用来配置项目原路径与安装路径的对应规则。
+
+
+```javascript
+module.exports = function(options) {
+
+  // options 为 components.json 的值。
+
+  // 可以添加一些逻辑，最终返回一个 roadmap 对象。
+
+  return [
+    {
+      reg: /^\/dist\/(.*)$/,
+      release: "$1"
+    }
+  ]
+
 }
 ```
