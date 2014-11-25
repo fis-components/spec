@@ -132,7 +132,7 @@ module.exports = function(options) {
       reg: /^\/dist\/(.*)$/,
       release: "$1"
     }
-  ]
+  ];
 
 }
 ```
