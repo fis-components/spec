@@ -75,7 +75,9 @@ FIS 模块规范说明
 每个依赖必须按照以下形式指定。
 
 ```
-平台://作者名/模块名@版本
+GIT 平台://作者名/模块名@版本
+http://domain.com/xxx
+svn://domain.com/xxx
 ```
 
 * 平台可以是 `github`、`gitlab` 或者 `bitbucket`。
