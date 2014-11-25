@@ -91,7 +91,7 @@ FIS 模块规范说明
 {
   ...
 
-  "roadmap": : "./components.roadmap.js"
+  "roadmap": "./components.roadmap.js"
 
   ...
 }
