@@ -138,4 +138,4 @@ module.exports = function(options) {
 ```
 
 * `reg` 用来匹配仓库原文件路径，支持正则与 [glob](https://github.com/isaacs/node-glob) 两种规则。
-* `release` 用来指定安装后的存放路径，当 `reg` 为正则表达式时，可以通过 $数字 来代替分组捕获。
+* `release` 用来指定安装后的存放路径，当 `reg` 为正则表达式时，可以通过 `$数字` 来代替分组捕获。
