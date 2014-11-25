@@ -46,12 +46,10 @@ FIS 模块规范说明
 
 ```json
 {
-  ...
   "keywords": [
     "fisp",
     "pagination"
   ]
-  ...
 }
 ```
 
@@ -89,11 +87,9 @@ FIS 模块规范说明
 
 ```json
 {
-  ...
 
   "roadmap": "./components.roadmap.js"
 
-  ...
 }
 ```
 
