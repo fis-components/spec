@@ -1,4 +1,4 @@
-FIS 模块规范说明
+FIS 组件规范说明
 ====
 
 此规范借鉴了很多 [componentjs](https://github.com/componentjs/component) 的思想。
