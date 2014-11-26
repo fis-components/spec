@@ -17,9 +17,9 @@ FIS 模块规范说明
   "name": "dialog",
   "description": "一个简单的 dialog 组件",
   "dependencies": [
-    "github://xiangshouding/glob.js@master",
-    "gitlab://fis-dev/fis-report-record@master",
-    "lights://pc-demo@latest"
+    "github:xiangshouding/glob.js@master",
+    "gitlab:fis-dev/fis-report-record@master",
+    "lights:pc-demo@latest"
   ],
   "mapping": "./mapping.config.js"
 }
@@ -66,8 +66,8 @@ FIS 模块规范说明
 ```json
 ...
 "dependencies": [
-  "github://xiangshouding/glob.js@0.1.9",
-  "gitlab://fis-dev/fis-report-record@latest"
+  "github:xiangshouding/glob.js@0.1.9",
+  "gitlab:fis-dev/fis-report-record@latest"
 ],
 ...
 ```
@@ -75,7 +75,7 @@ FIS 模块规范说明
 每个依赖必须按照以下形式指定。
 
 ```
-GIT 平台://作者名/模块名@版本
+GIT 平台:作者名/模块名@版本
 http://domain.com/xxx
 svn://domain.com/xxx
 ```
