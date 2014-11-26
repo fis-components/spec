@@ -7,7 +7,7 @@ FIS 模块规范说明
 
 模块应该是一个比较独立的整体，模块内部资源引用，应该使用相对路径来引用。模块中的 JS 应该采用 COMMONJS 规范或者 [AMD](https://github.com/amdjs/amdjs-api) 规范来解决依赖和对外暴露的问题。模块对于其依赖中 `main` JS 的引用应该通过模块名来引用，如 `require('jquery')`，`main` js 之外的 js 通过 `name/path` 的方式引用如 `require('jquery-ui/autocomplete')`。
 
-模块被安装后，应当使其目录尽可能少的包含无用文件，如： test 用例，编辑器配置文件和覆盖率报表之类的，都不应该被安装，规则可以通过 [roadmap](#roadmap) 设置。
+模块被安装后，应当使其目录尽可能少的包含无用文件，如： test 用例，编辑器配置文件和覆盖率报表之类的，都不应该被安装，规则可以通过 [mapping](#mapping) 设置。
 
 ## component.json
 每个组件必须包含一个 `component.json` 文件来描述此组件信息。
@@ -21,7 +21,7 @@ FIS 模块规范说明
     "gitlab://fis-dev/fis-report-record@master",
     "lights://pc-demo@latest"
   ],
-  "roadmap": "./components.roadmap.js"
+  "mapping": "./mapping.config.js"
 }
 ```
 ### name
@@ -83,16 +83,16 @@ svn://domain.com/xxx
 * 平台可以是 `github`、`gitlab` 或者 `bitbucket`。
 * 版本支持 [semver](https://github.com/npm/node-semver) 格式。
 
-### roadmap
+### mapping
 
 如果仓库中文件存放比较多或希望最终安装后路径与原存放路径不一致，可以通过指定此属性来设定。
 
-由于 roadmap 的规则比较复杂，不适合用 json 文件来描述，所以需要借助一个 js 文件来配置。
+由于 mapping 的规则比较复杂，不适合用 json 文件来描述，所以需要借助一个 js 文件来配置。
 
 ```json
 {
 
-  "roadmap": "./components.roadmap.js"
+  "mapping": "./mapping.config.js"
 
 }
 ```
@@ -115,7 +115,7 @@ svn://domain.com/xxx
 ```
 
 
-## components.roadmap.js
+## mapping.config.js
 
 用来配置项目原路径与安装路径的对应规则。
 
@@ -125,7 +125,7 @@ module.exports = function(options) {
 
   // options 为 components.json 的值。
 
-  // 可以添加一些逻辑，最终返回一个 roadmap 配置列表。
+  // 可以添加一些逻辑，最终返回一个 mapping 配置列表。
   return [
     {
       reg: /^\/dist\/(.*)$/i,
