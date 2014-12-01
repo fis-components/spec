@@ -76,11 +76,11 @@ FIS 组件规范说明
 
 ```
 GIT 平台:作者名/模块名@版本
-http://domain.com/xxx
-svn://domain.com/xxx
+lights:[lightjs.duapp.com/]仓库名称@版本
 ```
 
-* 平台可以是 `github`、`gitlab` 或者 `bitbucket`。
+* 平台可以是 `github`、`gitlab`、`lights` 或者 `bitbucket`。
+* lights 地址中，域名部分为可选，不填写时，默认从 fis 官方平台下载。
 * 版本支持 [semver](https://github.com/npm/node-semver) 格式。
 
 ### mapping
