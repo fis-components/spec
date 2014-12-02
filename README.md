@@ -16,8 +16,14 @@ FIS 组件规范说明
 {
   "name": "dialog",
   "description": "一个简单的 dialog 组件",
+  "protocol": "github",
+  "github": {
+    "author": "fis-components"
+  },
   "dependencies": [
-    "github:xiangshouding/glob.js@master",
+    "jquery@~1.9.0",
+    "jquery-ui@*",
+    "otherAuthor/xxxx",
     "gitlab:fis-dev/fis-report-record@master",
     "lights:pc-demo@latest"
   ],
