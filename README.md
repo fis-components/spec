@@ -26,13 +26,13 @@ FIS 组件规范说明
 ```
 ### name
 
-一个模块必须包含一个 `name` 属性，此属性将会成为其他模块的引用此模块的标识。
+模块必须包含一个 `name` 属性，此属性将会成为其他模块的引用此模块的标识。
 
 模块名只能包含小写英文字母、数字、中划线和下划线，它必须满足该正则 `/^[0-9a-z-_]+$/`。
 
 ### description
 
-一个模块应当包含适当的模块信息，帮助他人理解此模块的功能特点。
+模块应当包含适当的模块信息，帮助他人理解此模块的功能特点。
 
 ### version
 
@@ -72,16 +72,36 @@ FIS 组件规范说明
 ...
 ```
 
-每个依赖必须按照以下形式指定。
+每个依赖应当按照以下形式指定，用中括号括起来的部分为选填。
 
 ```
-GIT 平台:作者名/模块名@版本
-lights:[lightjs.duapp.com/]仓库名称@版本
+[GIT 平台:][作者名/]模块名[@版本]
+[lights:][lights平台域名/]仓库名称[@版本]
 ```
 
-* 平台可以是 `github`、`gitlab`、`lights` 或者 `bitbucket`。
-* lights 地址中，域名部分为可选，不填写时，默认从 fis 官方平台下载。
+* 平台可以是 `github`、`gitlab`或`lights`。
+* 如果依赖中平台名称省略，则默认采用 [protocol](#protocol) 所设定的值。
+* 如果 github 平台作者名省略，则默认采用 [github.author](#githubauthor) 所设定的值。
+* 如果 gitlab 平台作者名省略，则默认采用 [gitlab.author](#gitlabauthor) 所设定的值。
+* 如果 lights 平台作者名省略，则默认采用 [lights.repos](#lightsrepos) 所设定的值。
 * 版本支持 [semver](https://github.com/npm/node-semver) 格式。
+
+### protocol
+
+默认平台名称，默认为 `github`，取决于将此组件存放于什么平台。当[依赖](#dependencies)中没有指定组件平台时，默认将采用此处所设置的值。
+
+### github.author
+
+当默认平台名称设置为 `github` 时，设置 github 仓库默认的用户名，默认值为[fis-components](https://github.com/fis-components)。当[依赖](#dependencies)中省略了 github 用户名时，默认将采用此处所设置的值。
+
+### gitlab.author
+
+当默认平台名称设置为 `gitlab` 时，设置 gitlab 仓库默认的用户名。当[依赖](#dependencies)中省略了 gitlab 用户名时，默认将采用此处所设置的值。
+
+### gitlab.repos
+
+当默认平台名称设置为 `repos` 时，设置 repos 仓库默认的`domain`, 默认值为 `lightjs.duapp.com` (即默认的lights平台)。当[依赖](#dependencies)中省略了 lights domain 时，默认将采用此处所设置的值。
+
 
 ### mapping
 
