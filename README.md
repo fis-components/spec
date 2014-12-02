@@ -98,7 +98,7 @@ FIS 组件规范说明
 
 当默认平台名称设置为 `gitlab` 时，设置 gitlab 仓库默认的用户名。当[依赖](#dependencies)中省略了 gitlab 用户名时，默认将采用此处所设置的值。
 
-### gitlab.repos
+### lights.repos
 
 当默认平台名称设置为 `repos` 时，设置 repos 仓库默认的`domain`, 默认值为 `lightjs.duapp.com` (即默认的lights平台)。当[依赖](#dependencies)中省略了 lights domain 时，默认将采用此处所设置的值。
 
