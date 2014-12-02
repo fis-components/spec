@@ -83,7 +83,7 @@ FIS 组件规范说明
 * 如果依赖中平台名称省略，则默认采用 [protocol](#protocol) 所设定的值。
 * 如果 github 平台作者名省略，则默认采用 [github.author](#githubauthor) 所设定的值。
 * 如果 gitlab 平台作者名省略，则默认采用 [gitlab.author](#gitlabauthor) 所设定的值。
-* 如果 lights 平台作者名省略，则默认采用 [lights.repos](#lightsrepos) 所设定的值。
+* 如果 lights 平台 `domain` 省略，则默认采用 [lights.repos](#lightsrepos) 所设定的值。
 * 版本支持 [semver](https://github.com/npm/node-semver) 格式。
 
 ### protocol
